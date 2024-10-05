@@ -5,7 +5,7 @@ Retroarch Bezel is an extension for Playnite game manager and launcher to config
 
 Bezels are pictures aside of your wide screen when you are gaming old retrogames which are usually 4:3.
 
-You may show on that area either game-styled images or console-style image. The good point to start is [The Bezel Project] (https://github.com/thebezelproject)
+You may show on that area either game-styled images or console-style image. The good point to start is [The Bezel Project](https://github.com/thebezelproject).
 
 This plugin will configure retroarch overlay to show bezel png file above it.
 
