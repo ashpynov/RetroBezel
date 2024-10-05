@@ -1,0 +1,26 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+
+<sys:String x:Key="LOC_RETROBEZEL_UseBezelProject">Usa i bordi da </sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_Browse">Esplora</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_Path">Percorso ai bordi:</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_Download">I repository del Bezel Project</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_SearchFuzzines">Ricerca:</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_Something">Corrispondenza approssimativa</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_Optimal">Ottimale</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_Strict">Severo</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_UseBezelProjectHint" xml:space="preserve">* Il Bezel Project offre un insieme quasi completo di immagini di bordi per giochi retro, originariamente progettati per l'emulatore Retroarch sulla piattaforma RetroPie.
+
+Puoi utilizzare lo strumento di download del Bezel Project o scaricare manualmente i pacchetti dai repository.
+Dopo, specifica il percorso alla cartella dei bordi dei giochi (di solito `{EmulatorDir}\overlay`).
+
+Puoi anche utilizzare il Bezel Project da un altro pacchetto, come RetroBat,
+che si trova in `{EmulatorDir}\..\..\decorations\thebezelproject`.
+
+Il plugin cercherà di trovare un bordo per la ROM eseguita basandosi su una ricerca approssimativa del nome della ROM e del nome del gioco. È importante che la struttura delle ROM rifletta quella dei giochi del Bezel Project: il percorso verso la ROM deve contenere il nome del sistema, proprio come nel Bezel Project.</sys:String>
+
+
+
+</ResourceDictionary>

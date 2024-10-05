@@ -1,0 +1,25 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+
+<sys:String x:Key="LOC_RETROBEZEL_UseBezelProject">Usar molduras de </sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_Browse">Procurar</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_Path">Caminho para as molduras:</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_Download">Os repositórios do Bezel Project</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_SearchFuzzines">Pesquisa:</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_Something">Correspondência aproximada</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_Optimal">Ótimo</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_Strict">Rigoroso</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_UseBezelProjectHint" xml:space="preserve">* O Bezel Project oferece um conjunto quase completo de imagens de molduras para jogos retro, originalmente concebidos para o emulador Retroarch na plataforma RetroPie.
+
+Pode usar a ferramenta de download do Bezel Project ou fazer o download manual dos pacotes a partir dos repositórios.
+Depois disso, especifique o caminho para a pasta das molduras dos jogos (geralmente `{EmulatorDir}\overlay`).
+
+Também pode usar o Bezel Project de outro pacote, como RetroBat,
+que se encontra em `{EmulatorDir}\..\..\decorations\thebezelproject`.
+
+O plugin tentará encontrar uma moldura para a ROM executada com base numa pesquisa aproximada do nome da ROM e do nome do jogo. É importante que a estrutura das ROMs reflita a estrutura dos jogos do Bezel Project: o caminho para a ROM deve conter o nome do sistema, tal como no Bezel Project.</sys:String>
+
+
+</ResourceDictionary>

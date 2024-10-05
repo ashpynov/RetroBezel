@@ -114,9 +114,16 @@ namespace RetroBezel
             return 1.0 - ((double)stepsToSame / (double)Math.Max(first.Length, second.Length));
         }
 
-        private string MostSimilar(string gameName, string source, List<string> paths)
+        private string MostSimilar(string gameName, string source, string romName, List<string> paths)
         {
-            return paths.Select(s => new Tuple<string, double>(s, Math.Max(Similarity(gameName, Path.GetFileNameWithoutExtension(s)), Similarity(source, Path.GetFileNameWithoutExtension(s)))))
+            return paths.Select(s =>
+                    new Tuple<string, double>(s,
+                        Math.Max(
+                            Similarity(romName, Path.GetFileNameWithoutExtension(s)),
+                            Math.Max(
+                                Similarity(gameName, Path.GetFileNameWithoutExtension(s)),
+                                Similarity(source, Path.GetFileNameWithoutExtension(s))
+                ))))
                 .Where(t => t.Item2 >= settings.Settings.SimilarityEdge)
                 .OrderByDescending(d => d.Item2)
                 .FirstOrDefault()?.Item1;
@@ -136,8 +143,27 @@ namespace RetroBezel
         {
             return Path.GetFileName(path);
         }
-        private string FromBezelProject(Game game, string emulatorDir, string romFile)
+
+        bool Compare(string file, string gameName, string romFile, string romName)
         {
+            string fileName = Path.GetFileNameWithoutExtension(file);
+            string romFileName = Path.GetFileNameWithoutExtension(romFile);
+            string decFileName = DeConventGameName(fileName);
+            string decGameName = DeConventGameName(gameName);
+            string decRomFile = DeConventGameName(romFileName);
+            string decRomName = DeConventGameName(romName);
+
+            return 0 == string.Compare(fileName, romFileName, StringComparison.OrdinalIgnoreCase)
+                || 0 == string.Compare(fileName, romName, StringComparison.OrdinalIgnoreCase)
+                || 0 == string.Compare(fileName, gameName, StringComparison.OrdinalIgnoreCase)
+                || 0 == string.Compare(decFileName, decRomFile, StringComparison.OrdinalIgnoreCase)
+                || 0 == string.Compare(decFileName, decRomName, StringComparison.OrdinalIgnoreCase)
+                || 0 == string.Compare(decFileName, decGameName, StringComparison.OrdinalIgnoreCase);
+        }
+        private string FromBezelProject(Game game, string emulatorDir, string romFile, string romName)
+        {
+            if (!settings.Settings.UseBezelProject) return default;
+
             string bezelProjectPath = DetectBezelProject(game, emulatorDir);
 
             List<string> directories = Directory.GetFiles(bezelProjectPath, "*.png", SearchOption.AllDirectories)
@@ -157,10 +183,9 @@ namespace RetroBezel
                 files.AddMissing(Directory.GetFiles(d, "*.png", SearchOption.AllDirectories).ToList());
             }
 
-            string romName = Path.GetFileNameWithoutExtension(romFile);
-            string bezel = files.FirstOrDefault(f => 0 == string.Compare(Path.GetFileNameWithoutExtension(f), romName, StringComparison.OrdinalIgnoreCase))
-                        ?? files.FirstOrDefault(f => 0 == string.Compare(Path.GetFileNameWithoutExtension(f), DeConventGameName(game.Name), StringComparison.OrdinalIgnoreCase))
-                        ?? MostSimilar(game.Name, romFile, files);
+            string romNameFromFile = Path.GetFileNameWithoutExtension(romFile);
+            string bezel = files.FirstOrDefault(f => Compare(f, game.Name, romNameFromFile, romName))
+                        ?? MostSimilar(game.Name, romFile, romName, files);
 
             return bezel;
         }
@@ -251,6 +276,7 @@ namespace RetroBezel
                 return;
 
             string romFile = PlayniteApi.ExpandGameVariables(game, args.SelectedRomFile, emulator.InstallDir ?? "").Replace("\\\\", "\\");
+            string romName = game.Roms.FirstOrDefault(r => 0 == string.Compare(r.Path, args.SelectedRomFile))?.Name ?? Path.GetFileNameWithoutExtension(romFile);
 
             string retroarchCfg = Path.Combine(emulator.InstallDir, "retroarch.cfg");
 
@@ -263,7 +289,7 @@ namespace RetroBezel
 
             string gameBezel = ExistingFile(Path.Combine(gamePath, "bezel.png"))
                             ?? FromBezelDirRandom(gamePath)
-                            ?? FromBezelProject(game, emulator.InstallDir, romFile)
+                            ?? FromBezelProject(game, emulator.InstallDir, romFile, romName)
                             ?? FromSystem(game, romFile);
 
             UpdateConfig(retroarchCfg, customOverlayCfg, gameBezel != null);

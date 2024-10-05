@@ -1,7 +1,7 @@
 ﻿Id: RetroBezel_6d1b536f-c1e9-42f5-91d1-4fec74687d3c
 Name: Retroarch Bezel
 Author: Artem Shpynov
-Version: 0.1
+Version: 0.2
 Module: RetroBezel.dll
 Type: GenericPlugin
 Icon: icon.png

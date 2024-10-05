@@ -8,7 +8,7 @@
     <sys:String x:Key="LOC_RETROBEZEL_Path">Path to bezels:</sys:String>
     <sys:String x:Key="LOC_RETROBEZEL_Download">The Bezel Project repositories</sys:String>
     <sys:String x:Key="LOC_RETROBEZEL_SearchFuzzines">Search Fuzzines:</sys:String>
-    <sys:String x:Key="LOC_RETROBEZEL_Something">Something</sys:String>
+    <sys:String x:Key="LOC_RETROBEZEL_Something">Approximate</sys:String>
     <sys:String x:Key="LOC_RETROBEZEL_Optimal">Optimal</sys:String>
     <sys:String x:Key="LOC_RETROBEZEL_Strict">Strict</sys:String>
     <sys:String x:Key="LOC_RETROBEZEL_UseBezelProjectHint" xml:space="preserve">* The Bezel Project provides almost complete set of bezel images for Retrogames originally designed for Retroarch emulatour at RetroPie platform.

@@ -1,0 +1,24 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+
+<sys:String x:Key="LOC_RETROBEZEL_UseBezelProject">Использовать рамки из </sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_Browse">Обзор</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_Path">Путь к рамкам:</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_Download">репозиториев Tre Bezel Project</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_SearchFuzzines">Поиск:</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_Something">Приблизительный</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_Optimal">Оптимальный</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_Strict">Строгий</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_UseBezelProjectHint" xml:space="preserve">* The Bezel Project предлагает почти полный набор изображений рамок для ретро-игр, изначально разработанный для эмулятора Retroarch на платформе RetroPie.
+
+Вы можете использовать инструмент загрузки Bezel Project или загружать наборы вручную из репозиториев.
+После этого укажите путь к папке с рамками для игр (обычно `{EmulatorDir}\overlay`).
+
+Также можно использовать The Bezel Project из другого пакета, например, RetroBat,
+который находится по адресу `{EmulatorDir}\..\..\decorations\thebezelproject`.
+
+Плагин попытается найти рамку для запущенного Rom, основываясь на приблизительном поиске по названию Rom и названию игры. Важно, чтобы структура каталогов с Rom файлами повторяла структуру игр The Bezel Project: путь к Rom должен содержать название системы, как в The Bezel Project.</sys:String>
+
+</ResourceDictionary>

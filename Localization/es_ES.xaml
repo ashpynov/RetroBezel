@@ -1,0 +1,25 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+
+<sys:String x:Key="LOC_RETROBEZEL_UseBezelProject">Usar marcos de </sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_Browse">Explorar</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_Path">Ruta a los marcos:</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_Download">Los repositorios de Bezel Project</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_SearchFuzzines">Búsqueda:</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_Something">Correspondencia aproximada</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_Optimal">Óptimo</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_Strict">Estricto</sys:String>
+<sys:String x:Key="LOC_RETROBEZEL_UseBezelProjectHint" xml:space="preserve">* Bezel Project ofrece un conjunto casi completo de imágenes de marcos para juegos retro, diseñados originalmente para el emulador Retroarch en la plataforma RetroPie.
+
+Puedes usar la herramienta de descarga de Bezel Project o descargar los paquetes manualmente desde los repositorios.
+Después, especifica la ruta a la carpeta de los marcos de los juegos (generalmente `{EmulatorDir}\overlay`).
+
+También puedes usar Bezel Project desde otro paquete como RetroBat,
+que se encuentra en `{EmulatorDir}\..\..\decorations\thebezelproject`.
+
+El plugin intentará encontrar un marco para la ROM ejecutada basándose en una búsqueda aproximada del nombre de la ROM y del nombre del juego. Es importante que la estructura de las ROMs refleje la estructura de los juegos de Bezel Project: la ruta a la ROM debe contener el nombre del sistema, igual que en Bezel Project.</sys:String>
+
+
+</ResourceDictionary>
