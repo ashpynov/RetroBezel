@@ -1,8 +1,8 @@
 AddonId: 'RetroBezel_6d1b536f-c1e9-42f5-91d1-4fec74687d3c'
 Packages:
-  - Version: 0.2
+  - Version: 0.3
     RequiredApiVersion: 6.11.0
-    ReleaseDate: 2024-10-05
-    PackageUrl: https://github.com/ashpynov/RetroBezel/releases/download/v0.2/RetroBezel_6d1b536f-c1e9-42f5-91d1-4fec74687d3c_0_2.pext
+    ReleaseDate: 2024-10-19
+    PackageUrl: https://github.com/ashpynov/RetroBezel/releases/download/v0.3/RetroBezel_6d1b536f-c1e9-42f5-91d1-4fec74687d3c_0_3.pext
     Changelog:
-      - Beta 2
+      - Fixed config modification procedure

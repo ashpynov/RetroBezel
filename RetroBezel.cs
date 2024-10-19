@@ -233,9 +233,8 @@ namespace RetroBezel
             using (StreamReader configFile = new StreamReader(retroarchCfg))
             {
                 string line;
-                do
+                while ((line = configFile.ReadLine()) is string)
                 {
-                    line = configFile.ReadLine();
                     foreach (string k in keys)
                     {
                         if (Regex.IsMatch(line, $"\\s*{k}\\s*=\\s*.*"))
@@ -247,7 +246,6 @@ namespace RetroBezel
                     }
                     lines.Add(line);
                 }
-                while (line != null);
 
                 foreach (string k in keys)
                 {
